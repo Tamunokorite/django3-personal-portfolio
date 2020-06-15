@@ -1,0 +1,15 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+    {% if project.url %}
+    <br><a href="{{ project.url }}" target='_blank'><img src="{{ project.image.url }}" class="img-fluid img-link"></a>
+    {% else %}
+    <img src="{{ project.image.url }}" class="img-fluid">
+    {% endif %}
+
+    <h1>{{ project.title }}</h1>
+    <div class="text-justify">
+        {{ project.description|safe }}
+    </div>
+
+{% endblock %}

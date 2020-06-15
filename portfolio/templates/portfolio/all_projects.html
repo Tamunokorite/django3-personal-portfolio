@@ -1,0 +1,24 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+    <h1>Complete Portfolio</h1>
+
+    <h2 class="h4">I have worked on {{ projects.count }} project{{ projects.count|pluralize }}</h2>
+
+    {% for project in projects %}
+
+    <div>
+        {% if project.url %}
+        <br><a href="{{ project.url }}" target='_blank'><img src="{{ project.image.url }}" class="img-fluid img-link"></a>
+        {% else %}
+        <img src="{{ project.image.url }}" class="img-fluid">
+        {% endif %}
+            
+        <h2 class="h3">{{ project.title }}</h2>
+        <p class="text-left">{{ project.description|striptags|truncatechars:200 }}<a href="{% url 'portfolio:detail' project.id %}" class="float-right">More</a></p>
+        
+    </div><br><br>
+
+    {% endfor %}
+
+{% endblock %}

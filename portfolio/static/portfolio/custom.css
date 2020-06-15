@@ -1,0 +1,21 @@
+@font-face {
+    src: url('LexendTera-Regular.ttf');
+    font-family: LexendTera;
+}
+
+#brand {
+    font-family: LexendTera;
+}
+.img-container {
+    height: 300px;
+}
+
+@media (min-width: 768px){
+    a, .img-link {
+      transition: 0.2s;
+    }
+    .img-link:hover {
+      transform: scale(1.01);
+      box-shadow: 0 5px 30px #1d1d1d;
+    }
+}
